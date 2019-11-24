@@ -1,0 +1,25 @@
+<h1>{{ textbook.title }}</h1>
+<!-- image -->
+
+<table>
+    <thead>
+        <tr>
+            <th>出版者</th>
+            <th>出版日時</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ textbook.publisher }}</td>
+            <td>{{ textbook.pub_date }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>table of contents</h2>
+<!-- 目次 -->
+
+<p><a href="#">問題開始</a></p>
+<p><a href="#">回答履歴</a></p>
+
+<p><a href="{% url 'studb:index' %}">Topに戻る</a></p>
