@@ -1,11 +1,11 @@
 version: '3'
 services:
-  studb:
-    image: yumemo/studb
-    container_name: studb-container
-    hostname: studb-container
-    tty: true
-    volumes:
-      - ./app:/app
-    ports:
-      - "8000:8000"
+    studb:
+        image: yumemo/studb
+        container_name: studb-container
+        hostname: studb-container
+        tty: true
+        volumes:
+          - ./app:/app
+        ports:
+          - "8000:8000"
