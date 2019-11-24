@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3.7.5
 LABEL Maintainer "ymmmtym"
 ENV HOSTNAME="studb-container" \
     APP_PATH="/app" \
@@ -7,7 +7,7 @@ ENV HOSTNAME="studb-container" \
 COPY ["requirements.txt", "/tmp"]
 COPY ["app", "$APP_PATH"]
 WORKDIR $APP_PATH
-RUN apk update && \
+RUN apt-get update && \
     pip install --upgrade pip && \
     pip install --upgrade setuptools && \
     pip install -r /tmp/requirements.txt
