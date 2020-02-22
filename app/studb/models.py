@@ -28,3 +28,10 @@ class Question(models.Model):
   def __str__(self):
     return self.title
 
+# class Answer(models.Model):
+
+# class Create(models.Model):
+
+# class Log(models.Model):
+
+# class Result(models.Model):
