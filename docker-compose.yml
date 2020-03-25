@@ -1,9 +1,10 @@
 version: '3'
 services:
     studb:
+        build: .
         image: yumemo/studb
-        container_name: studb-container
-        hostname: studb-container
+        container_name: studb
+        hostname: studb
         tty: true
         volumes:
           - ./app:/app
