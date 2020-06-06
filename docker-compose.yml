@@ -7,6 +7,6 @@ services:
         hostname: studb
         tty: true
         volumes:
-          - ./app:/app
+          - .:/opt/studb
         ports:
           - "8000:8000"
