@@ -1,7 +1,7 @@
 beautifulsoup4==4.8.2
 Django==2.2.24
 django-bootstrap4==1.1.1
-Pillow==8.3.2
+Pillow==9.3.0
 pytz==2019.3
 soupsieve==2.0
 sqlparse==0.3.0
