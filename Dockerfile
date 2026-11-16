@@ -6,14 +6,16 @@ ENV HOSTNAME="studb" \
     APP="/app/studb" \
     PS1="[\u@\h \W]# " \
     UV_PROJECT_ENVIRONMENT="/app/studb/.venv" \
+    UV_LINK_MODE="copy" \
     PATH="/app/studb/.venv/bin:$PATH"
 
 COPY --from=uv /uv /uvx /bin/
 
-COPY [".", "${APP}"]
+COPY ["pyproject.toml", "uv.lock", "${APP}/"]
 WORKDIR ${APP}
-RUN uv venv && \
-    uv pip install -r requirements.txt
+RUN uv sync --frozen --no-dev --no-install-project
+
+COPY [".", "${APP}"]
 
 EXPOSE 8000
 CMD [ "python", "manage.py", "runserver", "0:8000" ]
