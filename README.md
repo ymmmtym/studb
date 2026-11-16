@@ -18,6 +18,7 @@ uv sync
 Or build and run with Docker.
 
 ```bash
+touch db.sqlite3
 docker compose up --build
 ```
 
