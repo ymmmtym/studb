@@ -8,5 +8,10 @@ services:
         tty: true
         volumes:
           - .:/opt/studb
+          - type: bind
+            source: ./db.sqlite3
+            target: /app/studb/db.sqlite3
+            bind:
+              create_host_path: false
         ports:
           - "8000:8000"

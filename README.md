@@ -12,13 +12,13 @@ PROJECT=studysite
 Install dependencies with [uv](https://docs.astral.sh/uv/) (Python 3.12).
 
 ```bash
-uv venv
-uv pip install -r requirements.txt
+uv sync
 ```
 
 Or build and run with Docker.
 
 ```bash
+touch db.sqlite3
 docker compose up --build
 ```
 
