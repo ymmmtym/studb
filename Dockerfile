@@ -18,4 +18,4 @@ RUN uv sync --frozen --no-dev --no-install-project
 COPY [".", "${APP}"]
 
 EXPOSE 8000
-CMD [ "python", "manage.py", "runserver", "0:8000" ]
+CMD [ "sh", "-c", "python manage.py migrate --noinput && exec python manage.py runserver 0:8000" ]

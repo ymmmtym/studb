@@ -15,11 +15,19 @@ Install dependencies with [uv](https://docs.astral.sh/uv/) (Python 3.12).
 uv sync
 ```
 
-Or build and run with Docker.
+Or build and run with Docker. The container applies migrations on startup.
 
 ```bash
 touch db.sqlite3
 docker compose up --build
+```
+
+On Linux the container runs as root, so the bind-mounted `db.sqlite3` can end up
+root-owned and host-side commands such as `uv run python manage.py migrate`
+cannot write it. Fix the ownership if that happens:
+
+```bash
+sudo chown "$(id -u):$(id -g)" db.sqlite3
 ```
 
 ## operation
