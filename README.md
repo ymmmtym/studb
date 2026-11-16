@@ -7,14 +7,35 @@ APP=studb
 PROJECT=studysite
 ```
 
+## setup
+
+Install dependencies with [uv](https://docs.astral.sh/uv/) (Python 3.12).
+
+```bash
+uv venv
+uv pip install -r requirements.txt
+```
+
+Or build and run with Docker.
+
+```bash
+docker compose up --build
+```
+
 ## operation
 
 make migrations
 
 ```bash
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
+uv run python manage.py makemigrations
+uv run python manage.py migrate
+uv run python manage.py createsuperuser
+```
+
+run server
+
+```bash
+uv run python manage.py runserver
 ```
 
 delete migrations
